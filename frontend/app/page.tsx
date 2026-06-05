@@ -1,11 +1,13 @@
 import { Play, ChevronRight, Award } from "lucide-react";
 import Link from "next/link";
 import RunningTrack from "@/components/RunningTrack";
+import TestFirebase from "@/components/TestFirebase";
 
 export default function Home() {
   return (
     <div className="bg-black text-white xl:pl-[80px] xl:pr-[80px] relative">
       <RunningTrack />
+      <TestFirebase />
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-32">
         <div className="absolute inset-0 z-0">
