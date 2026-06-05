@@ -1,0 +1,352 @@
+@import "tailwindcss";
+
+@theme {
+  --color-athlo-gold: #D6A23A;
+  --color-athlo-green: #0C6B3F;
+  --color-athlo-orange: #FF5722;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Running Track Layout and Runners styles */
+
+/* Arm and Leg swings for running animation */
+.runner-arm-left {
+  animation: arm-swing-left 0.5s infinite ease-in-out;
+}
+
+.runner-arm-right {
+  animation: arm-swing-right 0.5s infinite ease-in-out;
+}
+
+.runner-leg-left {
+  animation: leg-swing-left 0.5s infinite ease-in-out;
+}
+
+.runner-leg-right {
+  animation: leg-swing-right 0.5s infinite ease-in-out;
+}
+
+.runner-body {
+  animation: runner-bob 0.25s infinite ease-in-out;
+}
+
+@keyframes arm-swing-left {
+
+  0%,
+  100% {
+    transform: rotate(-40deg);
+  }
+
+  50% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes arm-swing-right {
+
+  0%,
+  100% {
+    transform: rotate(50deg);
+  }
+
+  50% {
+    transform: rotate(-40deg);
+  }
+}
+
+@keyframes leg-swing-left {
+
+  0%,
+  100% {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform: rotate(-55deg);
+  }
+}
+
+@keyframes leg-swing-right {
+
+  0%,
+  100% {
+    transform: rotate(-55deg);
+  }
+
+  50% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes runner-bob {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Vertical translation animations along the screen track */
+@keyframes run-down-slow {
+  0% {
+    transform: translateY(-100px) rotate(90deg);
+  }
+
+  100% {
+    transform: translateY(105vh) rotate(90deg);
+  }
+}
+
+@keyframes run-up-slow {
+  0% {
+    transform: translateY(105vh) rotate(270deg);
+  }
+
+  100% {
+    transform: translateY(-100px) rotate(270deg);
+  }
+}
+
+.animate-run-down-slow {
+  animation: run-down-slow 30s infinite linear;
+}
+
+.animate-run-up-slow {
+  animation: run-up-slow 30s infinite linear;
+}
+
+/* Sports Loader Animations */
+.animate-shuttlecock-arc {
+  animation: shuttlecock-arc 2.5s infinite ease-in-out;
+}
+
+.animate-tennis-bounce {
+  animation: tennis-bounce 2s infinite ease-in-out;
+}
+
+.animate-cricket-ball {
+  animation: cricket-ball 3s infinite ease-in-out;
+}
+
+.animate-stump-1 {
+  animation: stump-1-shake 3s infinite ease-in-out;
+}
+
+.animate-stump-2 {
+  animation: stump-2-shake 3s infinite ease-in-out;
+}
+
+.animate-stump-3 {
+  animation: stump-3-shake 3s infinite ease-in-out;
+}
+
+.animate-bails {
+  animation: bails-fly 3s infinite ease-in-out;
+}
+
+.animate-swim-across {
+  animation: swim-across-loader 4s infinite linear;
+}
+
+.animate-swim-arm-1 {
+  animation: swim-arm-swing-left 0.8s infinite ease-in-out;
+}
+
+.animate-swim-arm-2 {
+  animation: swim-arm-swing-right 0.8s infinite ease-in-out;
+}
+
+.animate-swim-leg-1 {
+  animation: swim-kick-left 0.4s infinite ease-in-out;
+}
+
+.animate-swim-leg-2 {
+  animation: swim-kick-right 0.4s infinite ease-in-out;
+}
+
+@keyframes shuttlecock-arc {
+  0% {
+    transform: translate(-40px, 15px) rotate(-60deg);
+  }
+
+  50% {
+    transform: translate(40px, -15px) rotate(60deg);
+  }
+
+  100% {
+    transform: translate(-40px, 15px) rotate(-60deg);
+  }
+}
+
+@keyframes tennis-bounce {
+  0% {
+    transform: translate(-60px, -20px);
+  }
+
+  25% {
+    transform: translate(-10px, 20px);
+  }
+
+  50% {
+    transform: translate(40px, -20px);
+  }
+
+  75% {
+    transform: translate(-10px, 20px);
+  }
+
+  100% {
+    transform: translate(-60px, -20px);
+  }
+}
+
+@keyframes cricket-ball {
+  0% {
+    transform: translate(-90px, -40px) scale(0.6);
+  }
+
+  45% {
+    transform: translate(-3px, -5px) scale(1);
+  }
+
+  100% {
+    transform: translate(90px, 20px) scale(0.8);
+  }
+}
+
+@keyframes stump-1-shake {
+
+  0%,
+  43% {
+    transform: rotate(0deg);
+  }
+
+  46%,
+  100% {
+    transform: rotate(-20deg) translate(-10px, 5px);
+  }
+}
+
+@keyframes stump-2-shake {
+
+  0%,
+  43% {
+    transform: rotate(0deg);
+  }
+
+  46%,
+  100% {
+    transform: rotate(5deg) translate(0, 8px);
+  }
+}
+
+@keyframes stump-3-shake {
+
+  0%,
+  43% {
+    transform: rotate(0deg);
+  }
+
+  46%,
+  100% {
+    transform: rotate(15deg) translate(8px, 5px);
+  }
+}
+
+@keyframes bails-fly {
+
+  0%,
+  43% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes swim-across-loader {
+  0% {
+    transform: translateX(-80px);
+  }
+
+  100% {
+    transform: translateX(120px);
+  }
+}
+
+@keyframes swim-arm-swing-left {
+
+  0%,
+  100% {
+    transform: rotate(-30deg);
+  }
+
+  50% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes swim-arm-swing-right {
+
+  0%,
+  100% {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes swim-kick-left {
+
+  0%,
+  100% {
+    transform: rotate(-12deg);
+  }
+
+  50% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes swim-kick-right {
+
+  0%,
+  100% {
+    transform: rotate(12deg);
+  }
+
+  50% {
+    transform: rotate(-12deg);
+  }
+}
